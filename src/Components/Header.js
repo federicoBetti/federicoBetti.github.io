@@ -43,11 +43,6 @@ class Header extends Component {
               </a>
             </li>
 
-            <li>
-              <a className="smoothscroll" href="#portfolio">
-                Works
-              </a>
-            </li>
             
           </ul>
         </nav>
@@ -83,5 +78,14 @@ class Header extends Component {
     );
   }
 }
+
+/* 
+
+            <li>
+              <a className="smoothscroll" href="#portfolio">
+                Works
+              </a>
+            </li>
+*/
 
 export default Header;
