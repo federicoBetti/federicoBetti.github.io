@@ -1,0 +1,233 @@
+{
+  "main": {
+    "name":"Federico Betti",
+    "description":"Hello! I am a not-standard computer engineer with passions for business, self-improvement and entrepreneurship.",
+    "image":"me.jpg",
+    "bio":"Engineer and logic, improving in all other aspects..",
+    "contactmessage":"Feel free to contact me!",
+    "email": "federico.betti@outlook.com",
+    "phone": "+39 3407556910",
+    "github":"https://github.com/federicoBetti/",
+    "project":"https://github.com/federicoBetti/federicoBetti.github.io/",
+    "address":{
+      "city":"Modena",
+      "state":"Italy"
+    },
+    "website": "https://federicobetti.github.io/",
+    "resumedownload":"https://drive.google.com/u/0/uc?id=16nx7Qfay5ApQnBEsVY8hlVMlSwNbEu0a&export=download",
+    "social":[
+      {
+        "name":"linkedin",
+        "url":"https://www.linkedin.com/in/federico-betti/",
+        "className":"fa fa-linkedin"
+      },
+      {
+        "name":"instagram",
+        "url":"http://instagram.com/federico_betti",
+        "className":"fa fa-instagram"
+      },
+      {
+        "name":"github",
+        "url":"https://github.com/federicoBetti/",
+        "className":"fa fa-github"
+      }
+    ]
+  },
+  "resume":{
+    "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
+    "education":[
+      {
+        "school":"Politecnico di Milano",
+        "degree":"Alta Scuola Politecnica",
+        "graduated":"2017 - 2019"
+      },{
+        "school":"Ecole polytechnique federale de Lausanne, Switzerland",
+        "degree":"Erasmus Programme",
+        "graduated":"Feb - July 2018"
+      },{
+        "school":"Politecnico di Milano",
+        "degree":"Master Degree in Computer Science and Engineering ",
+        "graduated":"2017 - 2019",
+        "grade": "110L/110"
+      },{
+        "school":"Politecnico di Torino",
+        "degree":"Master Degree in Computer Science and Engineering ",
+        "graduated":"2017 - 2019"
+      },{
+        "school":"Politecnico di Milano ",
+        "degree":"Laurea Triennale in Ingegneria Informatica",
+        "graduated":"2014 - 2017",
+        "grade": "110/110"
+      }
+    ],
+    "work":[
+      {
+        "company":"Leonardo",
+        "title":"AI Research Fellow",
+        "years":"01/2021 - Present",
+        "description":"Research Fellow in the new Leonardo Labs in Applied AI. I work on research and low TRL solutions for Leonardo using davinci-1 High Performance Computer. My main research focus is on Natural Language Processing using PyTorch, in particular in Semantic Similarity using Transformers, NLP-based document retrieval and Sentiment Analysis. I also work as a Project Manager and AI developer in company-internal projects."
+      },
+      {
+        "company":"Meta-liquid",
+        "title":"AI Engineer",
+        "years":"01/2020 - 01/2021",
+        "description":"I worked in startup based on research, development and production of Deep Learning technologies using Scala programming language. The goal was to move neural networks architectures from research papers to real applications on image, video and audio analysis for the broadcasting industry. We collaborate with an university research lab and I worked on some research papers."
+      },
+      {
+        "company":"EnergyWay",
+        "title":"Data Scientist",
+        "years":"08/2019 - 12/2019",
+        "description":"Part-time job during the final academic year, working on data analysis and management using Python (Pandas, Sklearn, Scipy) and AWS cloud technologies for storing and process automation."
+      }
+    ],
+    "publications":[
+      {
+        "title":"Controlled Text Generation using Adversarial Networks",
+        "authors":"Betti F., Ramponi G., Piccardi M.",
+        "conference":"INLG 2020",
+        "year":"2019",
+        "link":"https://aclanthology.org/2020.inlg-1.5.pdf",
+        "description":" Paper published on controlled text generation working on customization over the standard GAN framework to have a control over the final output."
+      }
+    ],
+    "experience":[
+      {
+        "name":"SEI Pioneer",
+        "years":"2018 - 2019",
+        "description":"Alta Scuola Politecnica project to develop a high tech product guided by companies and with both technical and business mentors with the aim of launching an innovative startup. It gave me an product-oriented mindset."
+      },
+      {
+        "name":"Alta Scuola Politecnica Workshops",
+        "years":"2018 - 2019",
+        "description":"7-days workshops with lectures and very intensive group projects together with students and tutors with completely different knowledge and backgrounds. Developed topics were: Dynamics of Innovation, Design Processes, Design in Urban Contexts"
+      },
+      {
+        "name":"Polimi Data Scientists",
+        "years":"2018 - 2019",
+        "description":"Group of students that organizes events with companies related to Data Science at Politecnico Di Milano to promote these new topics and reduce the gap between students and business."
+      },
+      {
+        "name":"Milan Critical Care Datathon",
+        "years":"Feb 2019",
+        "description":"Three full days of intensive group work to analyse a critical request on popular medical datasets in a team formed by Data Scientists, Doctors and Engineers. The team was rewarded with the prize for the best project."
+      },
+      {
+        "name":"Baxter Robot Software Development",
+        "years":"2016",
+        "description":"Software development to facilitate human-robot interaction in ROS with the collaborative robot called Baxter, within the ColRobot Eu project Horizon 2020 at University of Modena and Reggio Emilia in the LAPIS lab."
+      }
+    ],
+    "skills":[
+      {
+        "title": "IT Topics",
+        "specific_skill" : [
+            {"name": "Machine Learning"},
+            {"name": "Deep Learning"},
+            {"name": "Natural Language Processing"},
+            {"name": "Computer Vision"},
+            {"name": "Artificial Intelligence"},
+            {"name": "Software Development"},
+            {"name": "Web Development"},
+            {"name": "Linux"},
+            {"name": "HPC"}
+        ]
+      },
+      {
+        "title": "Programming (Advanced)",
+        "specific_skill" : [
+            {"name": "Python (Tensorflow, PyTorch"},
+            {"name": "Scala"},
+            {"name": "Java"},
+            {"name": "SQL"}
+        ]
+      },
+      {
+        "title": "Programming (Basic)",
+        "specific_skill" : [
+            {"name": "C"},
+            {"name": "C++"},
+            {"name": "HTML/CSS"},
+            {"name": "Matlab"},
+            {"name": "Ruby"},
+            {"name": "CUDA"}
+        ]
+      }
+    ]
+  },
+  "portfolio":{
+    "projects": [
+      {
+        "title":"Canadian Wanderlust",
+        "category":"My Travel Blog for my post-university travels",
+        "image":"01.jpg",
+        "url":"https://www.canadianwanderlust.com"
+      },
+      {
+        "title":"Fury Fighting Gear",
+        "category":"(offline now) A fighting gear company I started",
+        "image":"02.jpg",
+        "url":"http://www.timbakerdev.com"
+      },
+      {
+        "title":"Original Thai Food",
+        "category":"Website I built for a restaurant I like in Thailand",
+        "image":"03.jpg",
+        "url":"http://www.timbakerdev.com/originalthaifood.github.io"
+      },
+      {
+        "title":"Resume Website",
+        "category":"A React based resume website template",
+        "image":"04.jpg",
+        "url":"http://www.timbakerdev.com"
+      },
+      {
+        "title":"Smirkspace",
+        "category":"(MVP Only) A React and Meteor based chat University project.",
+        "image":"05.jpg",
+        "url":"http://www.smirkspace.com"
+      },
+      {
+        "title":"Canadian Wanderlust",
+        "category":"My Travel Blog for my post-university travels",
+        "image":"06.jpg",
+        "url":"https://www.canadianwanderlust.com"
+      },
+      {
+        "title":"Fury Fighting Gear",
+        "category":"(offline now) A fighting gear company I started",
+        "image":"01.jpg",
+        "url":"http://www.timbakerdev.com"
+      },
+      {
+        "title":"Original Thai Food",
+        "category":"Website I built for a restaurant I like in Thailand",
+        "image":"02.jpg",
+        "url":"http://www.timbakerdev.com/originalthaifood.github.io"
+      },
+      {
+        "title":"Original Thai Food",
+        "category":"Website I built for a restaurant I like in Thailand",
+        "image":"03.jpg",
+        "url":"http://www.timbakerdev.com/originalthaifood.github.io"
+      },
+      {
+        "title":"Resume Website",
+        "category":"A React based resume website template",
+        "image":"04.jpg",
+        "url":"http://www.timbakerdev.com"
+      },
+      {
+        "title":"Smirkspace",
+        "category":"(MVP Only) A React and Meteor based chat University project.",
+        "image":"05.jpg",
+        "url":"http://www.smirkspace.com"
+      },
+      {
+        "title":"Canadian Wanderlust",
+        "category":"My Travel Blog for my post-university travels",
+        "image":"06.jpg",
+        "url":"https://www.canadianwanderlust.com"
+      }
+    ]
+  }
+}
