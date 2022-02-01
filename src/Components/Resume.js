@@ -20,9 +20,13 @@ class Resume extends Component {
       if (single_education.grade) {
             mark = <><span>&bull;</span> <em className="date">{single_education.grade}</em></>;
         } 
+      var link = <><h3>{single_education.degree}</h3></>;
+      if (single_education.link) {
+            link = <><a href={single_education.link}><h3>{single_education.degree}</h3></a></>;
+        } 
       return (
-        <div key={single_education.school}>
-          <h3>{single_education.degree}</h3>
+        <div key={single_education.school}> 
+          {link}
           <p className="info">
             {single_education.school} 
             <span>&bull;</span> <em className="date">{single_education.graduated}</em>
@@ -45,9 +49,13 @@ class Resume extends Component {
     });
 
     const work = this.props.data.work.map(function (work) {
+      var link = <><h3>{work.title}</h3></>;
+      if (work.link) {
+            link = <><a href={work.link}><h3>{work.title}</h3></a></>;
+        } 
       return (
         <div key={work.company}>
-          <h3>{work.title}</h3>
+          {link}
           <p className="info">
             {work.company}
             <span>&bull;</span> <em className="date">{work.years}</em>

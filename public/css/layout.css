@@ -452,6 +452,19 @@ ul#nav li.current a { color: #fe6928; }
    cursor: pointer;
 }
 
+.portfolio-elements{
+	margin-bottom: 4%;
+}
+
+
+.project-image {
+	display: block;
+}
+
+.no-margin{
+	margin: 0;
+}
+
 /* overlay */
 .portfolio-item .item-wrap .overlay {
    position: absolute;

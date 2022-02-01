@@ -39,13 +39,14 @@ class App extends Component {
   componentDidMount() {
     this.getResumeData();
   }
-  /* <Portfolio data={this.state.resumeData.portfolio} /> 
+  /* 
   <Contact data={this.state.resumeData.main} />*/
   render() {
     return (
       <div className="App">
         <Header data={this.state.resumeData.main} />
         <About data={this.state.resumeData.main} />
+        <Portfolio data={this.state.resumeData.portfolio} /> 
         <Resume data={this.state.resumeData.resume} />
         <Footer data={this.state.resumeData.main} />
       </div>
