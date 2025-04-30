@@ -1,0 +1,71 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+    const papers = await getCollection("research-papers");
+    return papers.map((paper) => ({
+        params: { slug: paper.slug },
+        props: { paper },
+    }));
+}
+
+const { paper } = Astro.props;
+const { Content } = await paper.render();
+---
+
+<BaseLayout title={paper.data.title} sideBarActiveItemID="research-papers">
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">{paper.data.title}</div>
+        <div class="text-base opacity-70 mt-2">{paper.data.authors}</div>
+        <div class="text-base opacity-60 mt-1">
+            {paper.data.conference} | Published: {
+                new Date(paper.data.pubDate).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                })
+            }
+        </div>
+    </div>
+
+    {
+        paper.data.tags && (
+            <div class="flex flex-wrap gap-2 mb-6">
+                {paper.data.tags.map((tag) => (
+                    <span class="badge badge-outline">{tag}</span>
+                ))}
+            </div>
+        )
+    }
+
+    {
+        paper.data.link && (
+            <div class="mb-6">
+                <a
+                    href={paper.data.link}
+                    target="_blank"
+                    class="btn btn-primary"
+                >
+                    View Publication
+                </a>
+            </div>
+        )
+    }
+
+    {
+        paper.data.heroImage && (
+            <div class="mb-6">
+                <img
+                    src={paper.data.heroImage}
+                    class="rounded-lg shadow-md"
+                    alt={paper.data.title}
+                />
+            </div>
+        )
+    }
+
+    <div class="markdown-content prose prose-slate max-w-none">
+        <Content />
+    </div>
+</BaseLayout>
