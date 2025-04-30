@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+// Get the most recent projects
+const projects = (await getCollection("projects")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const featured_projects = projects.slice(0, 3);
+
+// Get the most recent research papers
+const papers = (await getCollection("research-papers")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const recent_papers = papers.slice(0, 2);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div class="pb-12 mt-5">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <div class="flex-1">
+        <div class="text-xl py-1">Hey there 👋</div>
+        <div class="text-5xl font-bold">I'm Federico Betti</div>
+        <div class="text-3xl py-3 font-bold">
+          Researcher, AI Engineer and Startup Enthusiast
+        </div>
+        <div class="py-2">
+          <text class="text-lg">
+            Hello! I am a not-standard computer engineer with passions for
+            business, self-improvement and entrepreneurship.
+          </text>
+        </div>
+        <div class="mt-8">
+          <a
+            class="btn"
+            href="https://www.linkedin.com/in/federico-betti-13919a134/"
+            target="_blank">Let's connect!</a
+          >
+          <a
+            href="https://github.com/federicoBetti"
+            target="_blank"
+            class="btn btn-outline ml-5"
+          >
+            View GitHub
+          </a>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 flex justify-center">
+        <div class="avatar">
+          <div class="w-40 md:w-60 rounded-xl">
+            <Image
+              src="/me.jpg"
+              alt="Federico Betti"
+              width={300}
+              height={300}
+              format="jpg"
+              class="shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">Featured Projects {"</>"}</div>
+  </div>
+
+  {
+    featured_projects.map((project) => (
+      <>
+        <HorizontalCard
+          title={project.data.title}
+          img={project.data.heroImage}
+          desc={project.data.description}
+          url={project.data.link || `/projects/${project.slug}`}
+          target={project.data.link ? "_blank" : "_self"}
+          badge={project.data.badge}
+          tags={project.data.tags}
+        />
+        <div class="divider my-0" />
+      </>
+    ))
+  }
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Recent Research</div>
+  </div>
+
+  {
+    recent_papers.map((paper) => (
+      <>
+        <HorizontalCard
+          title={paper.data.title}
+          img={paper.data.heroImage}
+          desc={paper.data.description}
+          url={paper.data.link || `/research-papers/${paper.slug}`}
+          target={paper.data.link ? "_blank" : "_self"}
+          badge={paper.data.badge}
+          tags={paper.data.tags}
+        />
+        <div class="divider my-0" />
+      </>
+    ))
+  }
+</BaseLayout>

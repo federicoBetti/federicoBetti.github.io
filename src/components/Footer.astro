@@ -1,0 +1,21 @@
+---
+import { LAST_UPDATED } from "../config";
+const today = new Date();
+const lastUpdated = new Date(LAST_UPDATED);
+---
+
+<footer class="footer footer-center block mb-5 pt-10">
+  <div class="pb-2">
+    &copy; {today.getFullYear()} Federico Betti
+  </div>
+  <div class="inline opacity-75">
+    Last updated: {
+      lastUpdated.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    }
+  </div>
+</footer>
+<style></style>

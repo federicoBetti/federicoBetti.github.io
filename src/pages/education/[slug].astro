@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+    const educationEntries = await getCollection("education");
+    return educationEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title} sideBarActiveItemID="education">
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">{entry.data.title}</div>
+        <div class="text-xl w-full font-semibold mt-1">
+            {entry.data.institution}
+        </div>
+        <div class="text-base opacity-60">
+            {entry.data.location} | {entry.data.startDate} - {
+                entry.data.endDate || "Present"
+            }
+        </div>
+        {
+            entry.data.degree && (
+                <div class="text-base mt-2">{entry.data.degree}</div>
+            )
+        }
+        {entry.data.gpa && <div class="text-base">GPA: {entry.data.gpa}</div>}
+    </div>
+
+    <div class="markdown-content prose prose-slate max-w-none">
+        <Content />
+    </div>
+</BaseLayout>

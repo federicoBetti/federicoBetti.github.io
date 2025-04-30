@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+import { getCollection } from "astro:content";
+
+const experiences = (await getCollection("work-experience")).sort((a, b) => {
+    // Sort by start date descending (most recent first)
+    // Convert startDate strings to comparable values
+    const dateA = a.data.startDate.split(" ").pop() || "0"; // Get the year, default to "0" if undefined
+    const dateB = b.data.startDate.split(" ").pop() || "0";
+    return parseInt(dateB) - parseInt(dateA);
+});
+---
+
+<BaseLayout title="Work Experience" sideBarActiveItemID="work-experience">
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">Work Experience</div>
+    </div>
+
+    <div class="time-line-container mb-10">
+        {
+            experiences.map((experience) => (
+                <TimeLineElement
+                    title={`${experience.data.title} at ${experience.data.company}`}
+                    subtitle={`From ${experience.data.startDate} to ${experience.data.endDate || "Present"} at ${experience.data.company}, ${experience.data.location}`}
+                >
+                    <p class="mb-4">{experience.data.description}</p>
+
+                    {experience.data.tags && (
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            {experience.data.tags.map((tag) => (
+                                <span class="badge badge-outline">{tag}</span>
+                            ))}
+                        </div>
+                    )}
+
+                    <div class="mt-4 mb-6">
+                        <a
+                            href={`/work-experience/${experience.slug}`}
+                            class="btn btn-outline btn-sm"
+                        >
+                            View Details
+                        </a>
+                    </div>
+                </TimeLineElement>
+            ))
+        }
+    </div>
+</BaseLayout>

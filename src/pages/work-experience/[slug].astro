@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+    const workExperienceEntries = await getCollection("work-experience");
+    return workExperienceEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title} sideBarActiveItemID="work-experience">
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">{entry.data.title}</div>
+        <div class="text-xl w-full font-semibold mt-1">
+            {entry.data.company}
+        </div>
+        <div class="text-base opacity-60">
+            {entry.data.location} | {entry.data.startDate} - {
+                entry.data.endDate || "Present"
+            }
+        </div>
+    </div>
+
+    {
+        entry.data.tags && (
+            <div class="flex flex-wrap gap-2 mb-6">
+                {entry.data.tags.map((tag) => (
+                    <span class="badge badge-outline">{tag}</span>
+                ))}
+            </div>
+        )
+    }
+
+    <div class="markdown-content prose prose-slate max-w-none">
+        <Content />
+    </div>
+</BaseLayout>

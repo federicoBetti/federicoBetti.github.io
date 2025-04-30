@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+import { getCollection } from "astro:content";
+
+const educationEntries = (await getCollection("education")).sort((a, b) => {
+    // Sort by start date descending (most recent first)
+    // Convert startDate strings to comparable values
+    const dateA = a.data.startDate.split(" ").pop() || "0"; // Get the year, default to "0" if undefined
+    const dateB = b.data.startDate.split(" ").pop() || "0";
+    return parseInt(dateB) - parseInt(dateA);
+});
+---
+
+<BaseLayout title="Education" sideBarActiveItemID="education">
+    <div class="mb-5">
+        <div class="text-3xl w-full font-bold">Education</div>
+    </div>
+
+    <div class="time-line-container grid gap-4 mb-10">
+        {
+            educationEntries.map((entry) => (
+                <TimeLineElement
+                    title={entry.data.title}
+                    subtitle={`${entry.data.startDate} to ${entry.data.endDate || "Present"} at ${entry.data.institution}, ${entry.data.location}`}
+                >
+                    <p class="mb-4">{entry.data.description}</p>
+                    {entry.data.degree && (
+                        <p class="font-semibold">{entry.data.degree}</p>
+                    )}
+                    {entry.data.gpa && (
+                        <p class="text-sm">GPA: {entry.data.gpa}</p>
+                    )}
+
+                    <a
+                        href={`/education/${entry.slug}`}
+                        class="btn btn-outline btn-sm mt-3"
+                    >
+                        View Details
+                    </a>
+                </TimeLineElement>
+            ))
+        }
+    </div>
+</BaseLayout>
