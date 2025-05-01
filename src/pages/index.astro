@@ -38,7 +38,9 @@ const latest_job = experiences.find(
           <a
             class="btn"
             href="https://www.linkedin.com/in/federico-betti-13919a134/"
-            target="_blank">Let's connect!</a
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Connect with Federico on LinkedIn">Let's connect!</a
           >
         </div>
       </div>
@@ -80,7 +82,7 @@ const latest_job = experiences.find(
             target={paper.data.link ? "_blank" : "_self"}
             badge={paper.data.badge}
             tags={paper.data.tags}
-            titleClass={paper.data.pdfUrl ? "pr-24" : ""}
+            titleClass=""
           >
             <div slot="extra" class="mt-3">
               <div class="text-xs opacity-60">
@@ -93,23 +95,38 @@ const latest_job = experiences.find(
               <div class="text-xs opacity-80 mt-2">
                 Authors: {paper.data.authors}
               </div>
+
+              {paper.data.pdfUrl && (
+                <div class="mt-4">
+                  <a
+                    href={paper.data.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-sm btn-outline btn-primary md:inline md:p-2 md:text-sm px-4"
+                    aria-label={`View PDF of ${paper.data.title}`}
+                  >
+                    View PDF
+                  </a>
+                </div>
+              )}
             </div>
           </HorizontalCard>
-
-          {paper.data.pdfUrl && (
-            <div class="absolute top-4 right-4 z-10">
-              <a
-                href={paper.data.pdfUrl}
-                target="_blank"
-                class="btn btn-sm btn-outline btn-primary"
-              >
-                View PDF
-              </a>
-            </div>
-          )}
         </div>
         <div class="divider my-0" />
       </>
     ))
   }
 </BaseLayout>
+
+<style>
+  @media (max-width: 768px) {
+    .btn-outline.btn-primary {
+      display: inline-block !important;
+      padding-top: 0.4rem !important;
+      padding-bottom: 0.4rem !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      font-size: 0.95rem !important;
+    }
+  }
+</style>

@@ -27,9 +27,9 @@ const experiences = (await getCollection("work-experience")).sort((a, b) => {
                     <p class="mb-4">{experience.data.description}</p>
 
                     {experience.data.tags && (
-                        <div class="flex flex-wrap gap-2 mb-4">
+                        <div class="tag-row mb-2">
                             {experience.data.tags.map((tag) => (
-                                <span class="badge badge-outline">{tag}</span>
+                                <span class="tag">{tag}</span>
                             ))}
                         </div>
                     )}

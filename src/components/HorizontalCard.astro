@@ -41,11 +41,11 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
         <slot name="extra" />
 
         <!-- Tags moved to display after extra content -->
-        <div class="card-actions justify-end mt-2">
+        <div class="tag-row">
           {
             tags &&
               tags.map((tag) => (
-                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
+                <a href={`${tag_url}/${tag}`} class="tag">
                   {tag}
                 </a>
               ))
