@@ -22,7 +22,6 @@ const projects = (await getCollection("projects")).sort(
           desc={project.data.description}
           url={project.data.link || `/projects/${project.slug}`}
           target={project.data.link ? "_blank" : "_self"}
-          badge={project.data.badge}
           tags={project.data.tags}
         />
         <div class="divider my-0" />

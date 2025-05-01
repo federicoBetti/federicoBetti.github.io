@@ -1,6 +1,6 @@
 ---
 title: "Optimizing Resource Consumption in Diffusion Models through Hallucination Early Detection"
-authors: "F Betti, L Baraldi, R Cucchiara, N Sebe"
+authors: "F Betti, L Baraldi, L Baraldi, R Cucchiara, N Sebe"
 conference: "Proceedings of the European Conference on Computer Vision Workshops. 2024."
 pubDate: "Jan 15 2024"
 description: "We introduce HEaD (Hallucination Early Detection), a novel paradigm that swiftly detects incorrect generations in diffusion models during early stages, saving computational resources and accelerating the generation process for complex multi-object images."
