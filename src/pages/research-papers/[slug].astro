@@ -39,9 +39,9 @@ const { Content } = await paper.render();
         )
     }
 
-    {
-        paper.data.link && (
-            <div class="mb-6">
+    <div class="flex flex-wrap gap-2 mb-6">
+        {
+            paper.data.link && (
                 <a
                     href={paper.data.link}
                     target="_blank"
@@ -49,9 +49,20 @@ const { Content } = await paper.render();
                 >
                     View Publication
                 </a>
-            </div>
-        )
-    }
+            )
+        }
+        {
+            paper.data.pdfUrl && (
+                <a
+                    href={paper.data.pdfUrl}
+                    target="_blank"
+                    class="btn btn-outline btn-primary"
+                >
+                    View PDF
+                </a>
+            )
+        }
+    </div>
 
     {
         paper.data.heroImage && (

@@ -16,31 +16,49 @@ const papers = (await getCollection("research-papers")).sort(
     {
         papers.map((paper) => (
             <>
-                <HorizontalCard
-                    title={paper.data.title}
-                    img={paper.data.heroImage}
-                    desc={paper.data.description}
-                    url={paper.data.link || `/research-papers/${paper.slug}`}
-                    target={paper.data.link ? "_blank" : "_self"}
-                    badge={paper.data.badge}
-                    tags={paper.data.tags}
-                >
-                    <div slot="extra" class="mt-3">
-                        <div class="text-xs opacity-60">
-                            {paper.data.conference} | Published:{" "}
-                            {new Date(paper.data.pubDate).toLocaleDateString(
-                                "en-US",
-                                { year: "numeric", month: "long" },
-                            )}
+                <div class="relative">
+                    <HorizontalCard
+                        title={paper.data.title}
+                        img={paper.data.heroImage}
+                        desc={paper.data.description}
+                        url={
+                            paper.data.link || `/research-papers/${paper.slug}`
+                        }
+                        target={paper.data.link ? "_blank" : "_self"}
+                        badge={paper.data.badge}
+                        tags={paper.data.tags}
+                        titleClass={paper.data.pdfUrl ? "pr-24" : ""}
+                    >
+                        <div slot="extra" class="mt-3">
+                            <div class="text-xs opacity-60">
+                                {paper.data.conference} | Published:{" "}
+                                {new Date(
+                                    paper.data.pubDate,
+                                ).toLocaleDateString("en-US", {
+                                    year: "numeric",
+                                    month: "long",
+                                })}
+                            </div>
+                            <div class="text-xs opacity-80 mt-2">
+                                Authors: {paper.data.authors}
+                            </div>
                         </div>
-                        <div class="text-xs opacity-80 mt-2">
-                            Authors: {paper.data.authors}
+                    </HorizontalCard>
+
+                    {paper.data.pdfUrl && (
+                        <div class="absolute top-4 right-4 z-10">
+                            <a
+                                href={paper.data.pdfUrl}
+                                target="_blank"
+                                class="btn btn-sm btn-outline btn-primary"
+                            >
+                                View PDF
+                            </a>
                         </div>
-                    </div>
-                </HorizontalCard>
+                    )}
+                </div>
                 <div class="divider my-0" />
             </>
         ))
     }
 </BaseLayout>
-

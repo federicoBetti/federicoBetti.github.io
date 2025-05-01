@@ -5,6 +5,7 @@ conference: "Proceedings of the European Conference on Computer Vision Workshops
 pubDate: "Jan 15 2024"
 description: "We introduce HEaD (Hallucination Early Detection), a novel paradigm that swiftly detects incorrect generations in diffusion models during early stages, saving computational resources and accelerating the generation process for complex multi-object images."
 link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ms5ctkUAAAAJ&citation_for_view=Ms5ctkUAAAAJ:eQOLeE2rZwMC"
+pdfUrl: "https://arxiv.org/pdf/2409.10597"
 tags: ["Computer Vision", "Diffusion Models", "Resource Optimization", "Computational Efficiency", "Hallucination Detection", "Multi-object Generation", "Cross-attention Maps", "Energy Consumption"]
 ---
 

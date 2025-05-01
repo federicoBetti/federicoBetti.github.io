@@ -6,6 +6,7 @@ pubDate: "Oct 29 2023"
 description: "We introduce ViCE, a novel automated method for evaluating consistency between generated images and text prompts by combining Large Language Models with Visual Question Answering in a process inspired by human cognitive assessment."
 link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ms5ctkUAAAAJ&citation_for_view=Ms5ctkUAAAAJ:W7OEmFMy1HYC"
 tags: ["Computer Vision", "Image Generation", "Cognitive Science", "Evaluation Metrics", "Visual Question Answering", "LLMs", "Vision-Language Models"]
+pdfUrl: "https://dl.acm.org/doi/pdf/10.1145/3581783.3612706"
 ---
 
 ## Abstract

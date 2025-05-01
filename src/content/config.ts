@@ -19,6 +19,7 @@ const researchPaperSchema = z.object({
     pubDate: z.coerce.date(),
     description: z.string(),
     link: z.string().optional(),
+    pdfUrl: z.string().optional(),
     heroImage: z.string().optional(),
     badge: z.string().optional(),
     tags: z.array(z.string()).refine(items => new Set(items).size === items.length, {

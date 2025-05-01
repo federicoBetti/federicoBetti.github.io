@@ -6,6 +6,7 @@ pubDate: "Dec 15 2020"
 description: "This paper presents a novel architecture for conditioned text generation using adversarial learning, allowing users to guide the generation process through simple sentences or concepts as input."
 link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ms5ctkUAAAAJ&citation_for_view=Ms5ctkUAAAAJ:u5HHmVD_uO8C"
 tags: ["NLP", "Text Generation", "Adversarial Learning", "GAN", "Conditioned Generation", "Deep Learning"]
+pdfUrl: "https://opus.lib.uts.edu.au/bitstream/10453/147236/5/Controlled%20Text%20Generation%20with%20Adversarial%20Learning.pdf"
 ---
 
 ## Abstract
