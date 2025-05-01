@@ -9,11 +9,11 @@ const papers = (await getCollection("research-papers")).sort(
 );
 const recent_papers = papers.slice(0, 2);
 
-// Get featured projects
-const projects = (await getCollection("projects")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+// Get the latest job experience (Typewise)
+const experiences = await getCollection("work-experience");
+const latest_job = experiences.find(
+  (exp) => exp.slug === "typewise-senior-ai-engineer",
 );
-const featured_projects = projects.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -23,13 +23,13 @@ const featured_projects = projects.slice(0, 3);
         <div class="text-xl py-1">Hey there 👋</div>
         <div class="text-5xl font-bold">I'm Federico Betti</div>
         <div class="text-3xl py-3 font-bold">
-          AI Engineer at Typewise & PhD Researcher at UniTn
+          Researcher, AI Engineer and Startup Enthusiast
         </div>
         <div class="py-2">
           <text class="text-lg">
             I'm a Computer Engineer with a focus on AI research and development,
             currently pursuing my PhD at the University of Trento while serving
-            as Senior AI Engineer at Typewise-ETH Zurich. My work spans natural
+            as Senior AI Engineer at Typewise - ETH Zurich. My work spans natural
             language processing, generative AI, and efficient ML
             implementations.
           </text>
@@ -44,6 +44,25 @@ const featured_projects = projects.slice(0, 3);
       </div>
     </div>
   </div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Current Position</div>
+  </div>
+
+  {
+    latest_job && (
+      <>
+        <HorizontalCard
+          title={latest_job.data.title + " at " + latest_job.data.company}
+          desc={latest_job.data.description}
+          url={`/work-experience/${latest_job.slug}`}
+          target="_self"
+          tags={latest_job.data.tags}
+        />
+        <div class="divider my-0" />
+      </>
+    )
+  }
 
   <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Recent Research</div>
@@ -74,26 +93,6 @@ const featured_projects = projects.slice(0, 3);
             </div>
           </div>
         </HorizontalCard>
-        <div class="divider my-0" />
-      </>
-    ))
-  }
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Featured Projects</div>
-  </div>
-
-  {
-    featured_projects.map((project) => (
-      <>
-        <HorizontalCard
-          title={project.data.title}
-          img={project.data.heroImage}
-          desc={project.data.description}
-          url={project.data.link || `/projects/${project.slug}`}
-          target={project.data.link ? "_blank" : "_self"}
-          tags={project.data.tags}
-        />
         <div class="divider my-0" />
       </>
     ))
