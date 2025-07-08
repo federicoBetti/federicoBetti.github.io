@@ -34,44 +34,81 @@ pnpm run dev
 ├── src/
 │   ├── components/
 │   │   ├── cv/
-│   │   │   ├── TimeLine
+│   │   │   └── TimeLine.astro
 │   │   ├── BaseHead.astro
 │   │   ├── Card.astro
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
-│   │   └── HorizontalCard.astro
-│   │   └── SideBar.astro
-│   │   └── SideBarMenu.astro
+│   │   ├── HorizontalCard.astro
+│   │   ├── HorizontalShopItem.astro
+│   │   ├── SideBar.astro
+│   │   ├── SideBarMenu.astro
 │   │   └── SideBarFooter.astro
 │   ├── content/
-│   │   ├── blog/
-│   │   │   ├── post1.md
-│   │   │   ├── post2.md
-│   │   │   └── post3.md
-│   │   ├── store/
-│   │   │   ├── item1.md
-│   │   │   ├── item2.md
+│   │   ├── education/
+│   │   │   ├── alta-scuola-politecnica.md
+│   │   │   ├── erasmus-programme.md
+│   │   │   ├── laurea-triennale.md
+│   │   │   ├── master-polimi.md
+│   │   │   ├── master-polito.md
+│   │   │   └── phd-university-of-trento.md
+│   │   ├── projects/
+│   │   │   ├── knowai-project.md
+│   │   │   ├── polimi-data-scientists.md
+│   │   │   └── sei-pioneer-project.md
+│   │   ├── research-papers/
+│   │   │   ├── controlled-text-generation.md
+│   │   │   ├── dice-image-editing-evaluation.md
+│   │   │   ├── lets-vice.md
+│   │   │   └── optimizing-resource-consumption.md
+│   │   ├── work-experience/
+│   │   │   ├── energyway-data-scientist.md
+│   │   │   ├── leonardo-ai-research-fellow.md
+│   │   │   ├── meta-liquid-ai-engineer.md
+│   │   │   └── typewise-senior-ai-engineer.md
+│   │   └── config.ts
 │   ├── layouts/
-│   │   └── BaseLayout.astro
-│   │   └── PostLayout.astro
-│   └── pages/
-│   │   ├── blog/
-│   │   │   ├── [...page].astro
-│   │   │   ├── [slug].astro
-│   │   └── cv.astro
-│   │   └── index.astro
-│   │   └── projects.astro
+│   │   ├── BaseLayout.astro
+│   │   ├── PostLayout.astro
+│   │   └── StoreItemLayout.astro
+│   ├── lib/
+│   │   └── createSlug.ts
+│   ├── pages/
+│   │   ├── education/
+│   │   │   └── [slug].astro
+│   │   ├── projects/
+│   │   │   └── [slug].astro
+│   │   ├── research-papers/
+│   │   │   └── [slug].astro
+│   │   ├── work-experience/
+│   │   │   └── [slug].astro
+│   │   ├── 404.astro
+│   │   ├── education.astro
+│   │   ├── index.astro
+│   │   ├── projects.astro
+│   │   ├── research-papers.astro
+│   │   ├── work-experience.astro
 │   │   └── rss.xml.js
 │   ├── styles/
 │   │   └── global.css
-│   └── config.ts
+│   ├── config.ts
+│   └── env.d.ts
 ├── public/
-│   ├── favicon.svg
-│   └── profile.webp
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── favicon.png
+│   ├── itemPreview.webp
+│   ├── me.jpg
+│   ├── post_img.webp
+│   ├── profile.webp
+│   ├── robots.txt
+│   ├── site.webmanifest
 │   └── social_img.webp
+├── scripts/
+│   └── update-timestamp.js
 ├── astro.config.mjs
-├── tailwind.config.cjs
 ├── package.json
+├── tailwind.config.cjs
 └── tsconfig.json
 ```
 
@@ -184,64 +221,58 @@ You can add a [content collection](https://docs.astro.build/en/guides/content-co
 
 Where you need to define your content collections, we define our content schemas too.
 
-#### Blog
+#### Content Collections
 
-Add your `md` blog post in the `/content/blog/` folder.
+The project uses the following content collections:
 
-##### Post format
+##### Education
 
-Add code with this format in the top of each post file.
+Add your education entries in the `/content/education/` folder.
+
+##### Projects
+
+Add your project entries in the `/content/projects/` folder.
+
+##### Research Papers
+
+Add your research paper entries in the `/content/research-papers/` folder.
+
+##### Work Experience
+
+Add your work experience entries in the `/content/work-experience/` folder.
+
+##### Content Entry format
+
+Add code with this format in the top of each content file.
 
 ```
 ---
-title: "Post Title"
+title: "Entry Title"
 description: "Description"
-pubDate: "Post date format(Sep 10 2022)"
-heroImage: "Post Hero Image URL"
+pubDate: "Date format(Sep 10 2022)"
+heroImage: "Image URL (optional)"
 ---
 ```
 
 ### Pages
 
-#### Blog
+#### Content Collection Pages
 
-Blog uses Astro's content collection to query post's `md`.
+Each content collection has its own page and dynamic routing:
 
-##### [page].astro
-
-The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
+- `/education.astro` - Lists all education entries
+- `/projects.astro` - Lists all projects
+- `/research-papers.astro` - Lists all research papers
+- `/work-experience.astro` - Lists all work experience
 
 ##### [slug].astro
 
-The `[slug].astro` is the base route for every blog post, you can customize the page layout or behaviour, by default uses `content/blog` for content collection and `PostLayout` as layout.
+Each collection has a `[slug].astro` file in its respective directory that handles individual entry pages:
 
-#### Shop
-
-Add your `md` item in the `/pages/shop/` folder.
-
-##### [page].astro
-
-The `[page].astro` is the route to work with the paginated item list. You can change there the number of items listed for each page and the pagination button labels. The shop will render all `.md` files you include inside this folder.
-
-##### Item format
-
-Add code with this format at the top of each item file.
-
-```js
----
-title: "Demo Item 1"
-description: "Item description"
-heroImage: "Item img url"
-details: true // show or hide details btn
-custom_link_label: "Custom btn link label"
-custom_link: "Custom btn link"
-pubDate: "Sep 15 2022"
-pricing: "$15"
-oldPricing: "$25.5"
-badge: "Featured"
-checkoutUrl: "https://checkouturl.com/"
----
-```
+- `/education/[slug].astro` - Individual education entry pages
+- `/projects/[slug].astro` - Individual project pages
+- `/research-papers/[slug].astro` - Individual research paper pages
+- `/work-experience/[slug].astro` - Individual work experience pages
 
 #### Static pages
 
