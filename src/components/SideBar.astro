@@ -12,18 +12,26 @@ const { sideBarActiveItemID } = Astro.props;
   >
     <div class="w-fit mx-auto mt-5 mb-6">
       <a href="/">
-        <div
-          class="avatar transition ease-in-out hover:scale-[102%] block m-auto"
-        >
-          <div class="w-[8.5rem]">
-            <Image
-              class="mask mask-circle"
-              format="jpg"
-              width={300}
-              height={300}
-              src="/me.jpg"
-              alt="Federico Betti"
-            />
+        <div class="relative inline-block">
+          <span
+            class="absolute -top-2 -left-2 w-[9.2rem] h-[9.2rem] border-2 border-primary rounded-sm"
+          ></span>
+          <span
+            class="absolute -bottom-2 -right-2 w-[9.2rem] h-[9.2rem] border-2 border-primary rounded-sm opacity-60"
+          ></span>
+          <div
+            class="avatar transition ease-in-out hover:scale-[102%] block m-auto"
+          >
+            <div class="w-[8.5rem] rounded-none overflow-hidden">
+              <Image
+                class=""
+                format="jpg"
+                width={300}
+                height={300}
+                src="/me.jpg"
+                alt="Federico Betti"
+              />
+            </div>
           </div>
         </div>
       </a>

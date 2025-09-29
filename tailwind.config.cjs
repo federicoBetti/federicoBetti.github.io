@@ -6,7 +6,16 @@ module.exports = {
 	},
 	plugins: [require("@tailwindcss/typography"), require("daisyui")],
 	daisyui: {
-		themes: true, // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
+		// Define a custom theme to set the exact brand blue (RGB 63,108,169 => #3F6CA9)
+		themes: [
+			{
+				fb: {
+					primary: "#3F6CA9",
+				},
+			},
+			"corporate",
+			"dark",
+		], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
 		darkTheme: "dark", // name of one of the included themes for dark mode
 		logs: false, // Shows info about daisyUI version and used config in the console when building your CSS
 	}

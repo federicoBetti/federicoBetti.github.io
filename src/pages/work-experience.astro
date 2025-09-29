@@ -2,6 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 import { getCollection } from "astro:content";
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+
+dayjs.extend(customParseFormat);
 
 const experiences = (await getCollection("work-experience")).sort((a, b) => {
     // Sort by start date descending (most recent first)
@@ -10,6 +14,33 @@ const experiences = (await getCollection("work-experience")).sort((a, b) => {
     const dateB = b.data.startDate.split(" ").pop() || "0";
     return parseInt(dateB) - parseInt(dateA);
 });
+
+function parseMonthYear(dateStr) {
+    const formats = ["MMM YYYY", "MMMM YYYY", "YYYY"]; // fallbacks
+    for (const fmt of formats) {
+        const d = dayjs(dateStr, fmt);
+        if (d.isValid()) return d;
+    }
+    return dayjs(NaN);
+}
+
+function formatDuration(startStr, endStr) {
+    const start = parseMonthYear(startStr);
+    const end =
+        !endStr || endStr.toLowerCase() === "present"
+            ? dayjs()
+            : parseMonthYear(endStr);
+    if (!start.isValid() || !end.isValid()) return "";
+    const totalMonths = end.diff(start, "month");
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+    const parts: string[] = [];
+    if (years > 0) parts.push(`${years} ${years === 1 ? "year" : "years"}`);
+    if (months > 0)
+        parts.push(`${months} ${months === 1 ? "month" : "months"}`);
+    if (parts.length === 0) parts.push("< 1 month");
+    return parts.join(" ");
+}
 ---
 
 <BaseLayout title="Work Experience" sideBarActiveItemID="work-experience">
@@ -22,7 +53,7 @@ const experiences = (await getCollection("work-experience")).sort((a, b) => {
             experiences.map((experience) => (
                 <TimeLineElement
                     title={`${experience.data.title} at ${experience.data.company}`}
-                    subtitle={`From ${experience.data.startDate} to ${experience.data.endDate || "Present"} at ${experience.data.company}, ${experience.data.location}`}
+                    subtitle={`From ${experience.data.startDate} to ${experience.data.endDate || "Present"} (${formatDuration(experience.data.startDate, experience.data.endDate)}) at ${experience.data.company}, ${experience.data.location}`}
                 >
                     <p class="mb-4">{experience.data.description}</p>
 
