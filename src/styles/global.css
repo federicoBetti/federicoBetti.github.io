@@ -35,6 +35,16 @@
     }
 }
 
+/* Sidebar surface: keep brand light blue on light theme, neutral on dark */
+.sidebar-surface {
+    background-color: #EEF3FA;
+}
+@media (prefers-color-scheme: dark) {
+    .sidebar-surface {
+        background-color: rgb(var(--b2));
+    }
+}
+
 .tag-row {
     display: flex;
     flex-wrap: wrap;
