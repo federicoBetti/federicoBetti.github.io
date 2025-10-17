@@ -61,9 +61,9 @@ function formatDuration(startStr, endStr) {
 
     {
         entry.data.tags && (
-            <div class="flex flex-wrap gap-2 mb-6">
+            <div class="tag-row mb-6">
                 {entry.data.tags.map((tag) => (
-                    <span class="badge badge-outline">{tag}</span>
+                    <span class="tag">{tag}</span>
                 ))}
             </div>
         )

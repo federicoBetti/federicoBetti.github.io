@@ -42,5 +42,17 @@ const {
       </div>
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
     </div>
+    <script>
+      // Respect system color scheme and toggle DaisyUI theme accordingly
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+      const applyTheme = () => {
+        document.documentElement.setAttribute(
+          "data-theme",
+          prefersDark.matches ? "fb-dark" : "fb",
+        );
+      };
+      applyTheme();
+      prefersDark.addEventListener("change", applyTheme);
+    </script>
   </body>
 </html>

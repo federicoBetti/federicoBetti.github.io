@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const themes = require("daisyui/src/theming/themes");
+
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
@@ -6,17 +8,22 @@ module.exports = {
 	},
 	plugins: [require("@tailwindcss/typography"), require("daisyui")],
 	daisyui: {
-		// Define a custom theme to set the exact brand blue (RGB 63,108,169 => #3F6CA9)
+		// Define custom light and dark themes using the same brand primary
 		themes: [
 			{
 				fb: {
+					...themes["[data-theme=light]"],
 					primary: "#3F6CA9",
 				},
 			},
-			"corporate",
-			"dark",
-		], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
-		darkTheme: "dark", // name of one of the included themes for dark mode
+			{
+				"fb-dark": {
+					...themes["[data-theme=dark]"],
+					primary: "#3F6CA9",
+				},
+			},
+		], // true: all themes | false: only light + dark | array: specific themes
+		darkTheme: "fb-dark", // use custom dark theme so primary isn't purple
 		logs: false, // Shows info about daisyUI version and used config in the console when building your CSS
 	}
 }
