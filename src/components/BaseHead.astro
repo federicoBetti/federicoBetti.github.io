@@ -16,6 +16,9 @@ const {
 	image = "/social_img.webp",
 	ogType = "website",
 } = Astro.props;
+
+const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const shouldLoadAnalytics = Boolean(measurementId) && import.meta.env.PROD;
 ---
 
 <!-- Global Metadata -->
@@ -55,3 +58,18 @@ const {
 	property="twitter:image:alt"
 	content="Federico Betti - AI Researcher and Engineer"
 />
+
+{shouldLoadAnalytics && (
+	<>
+		<script
+			async
+			src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+		></script>
+		<script>
+			{`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${measurementId}', { anonymize_ip: true });`}
+		</script>
+	</>
+)}
