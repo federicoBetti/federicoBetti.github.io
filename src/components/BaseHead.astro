@@ -17,8 +17,7 @@ const {
 	ogType = "website",
 } = Astro.props;
 
-const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
-const shouldLoadAnalytics = Boolean(measurementId) && import.meta.env.PROD;
+const shouldLoadAnalytics = import.meta.env.PROD;
 ---
 
 <!-- Global Metadata -->
@@ -59,17 +58,19 @@ const shouldLoadAnalytics = Boolean(measurementId) && import.meta.env.PROD;
 	content="Federico Betti - AI Researcher and Engineer"
 />
 
-{shouldLoadAnalytics && (
-	<>
-		<script
-			async
-			src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-		></script>
-		<script>
-			{`window.dataLayer = window.dataLayer || [];
+{
+	shouldLoadAnalytics && (
+		<>
+			<script
+				async
+				src="https://www.googletagmanager.com/gtag/js?id=G-1DFVWJEE58"
+			/>
+			<script>
+				{`window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', '${measurementId}', { anonymize_ip: true });`}
-		</script>
-	</>
-)}
+        gtag('config', 'G-1DFVWJEE58', { anonymize_ip: true });`}
+			</script>
+		</>
+	)
+}
