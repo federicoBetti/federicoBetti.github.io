@@ -53,6 +53,46 @@ const {
       };
       applyTheme();
       prefersDark.addEventListener("change", applyTheme);
+
+      const attachGaEventTracking = () => {
+        if (typeof document === "undefined") {
+          return;
+        }
+
+        const elements = document.querySelectorAll("[data-ga-event]");
+        elements.forEach((element) => {
+          element.addEventListener("click", () => {
+            if (typeof window === "undefined" || typeof window.gtag !== "function") {
+              return;
+            }
+
+            const eventName = element.getAttribute("data-ga-event");
+            if (!eventName) {
+              return;
+            }
+
+            const params = {};
+            const category = element.getAttribute("data-ga-category");
+            const label = element.getAttribute("data-ga-label");
+            const value = element.getAttribute("data-ga-value");
+
+            if (category) {
+              params.event_category = category;
+            }
+            if (label) {
+              params.event_label = label;
+            }
+            if (value) {
+              const numericValue = Number(value);
+              params.value = Number.isNaN(numericValue) ? value : numericValue;
+            }
+
+            window.gtag("event", eventName, params);
+          });
+        });
+      };
+
+      attachGaEventTracking();
     </script>
   </body>
 </html>
