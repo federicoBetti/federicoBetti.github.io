@@ -9,23 +9,28 @@ const projects = (await getCollection("projects")).sort(
 ---
 
 <BaseLayout title="Projects" sideBarActiveItemID="projects">
-  <div>
-    <div class="text-3xl w-full font-bold mb-5">Projects</div>
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Projects</div>
   </div>
 
-  {
-    projects.map((project) => (
-      <>
-  <HorizontalCard
-          title={project.data.title}
-          img={project.data.heroImage}
-          desc={project.data.description}
-          url={project.data.link || `/projects/${project.slug}`}
-          target={project.data.link ? "_blank" : "_self"}
-          tags={project.data.tags}
-  />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+  <div class="relative pl-5 mb-10">
+    <span
+      class="pointer-events-none absolute left-1 top-0 bottom-0 w-[2px] bg-primary"
+    ></span>
+    <div class="grid gap-6">
+      {
+        projects.map((project) => (
+          <HorizontalCard
+            title={project.data.title}
+            img={project.data.heroImage}
+            desc={project.data.description}
+            url={project.data.link || `/projects/${project.slug}`}
+            target={project.data.link ? "_blank" : "_self"}
+            tags={project.data.tags}
+            contentClass="px-2 md:px-3"
+          />
+        ))
+      }
+    </div>
+  </div>
 </BaseLayout>
