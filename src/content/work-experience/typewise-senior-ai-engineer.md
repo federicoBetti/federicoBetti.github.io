@@ -4,28 +4,24 @@ company: "Typewise - ETH Zurich"
 location: "Zurich, Switzerland"
 startDate: "May 2022"
 endDate: "Present"
-description: "As a Senior AI Engineer at Typewise (Y Combinator alumni), I work at the intersection of industry and academia through our collaboration with Prof. Ryan Cotterell's NLP lab at ETH Zurich. I lead the development of advanced text prediction and grammar correction systems, strategically balancing computational efficiency with model performance to create production-ready NLP solutions. My responsibilities include optimizing large language model integrations, architecting scalable AWS infrastructure, and ensuring robust deployment of our language technologies. Recently, I've been focusing on developing AI agents for customer care applications, leveraging cutting-edge libraries and frameworks to create responsive, context-aware solutions. Beyond technical leadership, I actively participate in strategic discussions with the founding team on product development, business growth, and organizational scaling, including talent acquisition and team development."
-tags: ["NLP", "Text Prediction", "Grammar Correction", "Large Language Models", "AWS", "Performance Optimization", "Product Development", "YC Startup", "AI Agents", "Customer Care"]
+description: "As a Senior AI Engineer at Typewise, I own the NLP/LLM roadmap and deliver production-grade language systems. My work spans retrieval-augmented AI agents for customer service automation (LangGraph), as well as real-time multilingual text prediction and grammar correction. I build and maintain low-latency Python services (<250ms) on AWS, drive engineering quality improvements (TDD and tooling), and collaborate closely with the founders and leadership on product strategy, organizational scaling, and hiring."
+tags: ["NLP", "Text Prediction", "Grammar Correction", "Large Language Models", "AWS", "Performance Optimization", "Product Development", "Production ML", "AI Agents", "Customer Care"]
 ---
 
 ## Responsibilities
 
 - Collaborate with Prof. Ryan Cotterell's lab at ETH Zurich on NLP research and implementation
-- Develop and optimize solutions for text prediction and grammar correction
-- Balance performance, computational efficiency, and model size in product development
-- Integrate large language models into production systems
-- Design and implement AI agents for customer care using state-of-the-art libraries
-- Manage AWS infrastructure components for NLP applications
-- Ensure robustness and scalability of language processing systems
-- Engage with founders on product development and business strategy discussions
-- Contribute to operational aspects including hiring and team building
+- Own the NLP/LLM roadmap, spanning product strategy and technical execution
+- Design and implement retrieval-augmented, hierarchical AI agent architectures for customer service automation (LangGraph)
+- Ship real-time multilingual text prediction and grammar correction
+- Build and maintain production Python services for low-latency inference (<250ms), evaluation, and data pipelines on AWS (testing, CI/CD, observability)
+- Drive engineering quality improvements (TDD and tooling)
+- Collaborate with ETH Zurich research partners to translate research into product features (patent pending)
+- Work closely with founders/leadership on product strategy, organizational scaling, and hiring
 
 ## Achievements
 
-- Successfully implemented efficient text prediction systems balancing accuracy and computational resources
-- Developed grammar correction algorithms that enhance user experience while maintaining performance
-- Created AI agent solutions for customer care that improve response time and quality
-- Optimized integration of large language models within resource constraints
-- Established robust AWS infrastructure supporting scalable NLP applications
-- Contributed to product development decisions that aligned technical capabilities with business goals
-- Helped build and scale the NLP team through technical leadership and recruitment 
+- Shipped real-time multilingual text prediction, grammar correction, and conversational agents to 4000+ users
+- Achieved 90%+ automated resolution rates in specific customer-service flows using retrieval-augmented agents with human-in-the-loop constraints (LangGraph)
+- Increased automated test coverage from 15% to 80% across core NLP services by driving adoption of TDD and tooling
+- Supported a full product pivot and hiring (5+ ML/engineering hires) through close collaboration with founders

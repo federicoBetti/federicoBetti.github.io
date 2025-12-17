@@ -1,16 +1,16 @@
 ---
 title: "SEI Pioneer Project"
-description: "Led a high-tech product development initiative at Alta Scuola Politecnica aimed at launching an innovative startup, working with industry professionals and mentors."
+description: "Led a high-tech product development initiative at Alta Scuola Politecnica, working with industry professionals and mentors on product strategy and execution."
 pubDate: "Jan 01 2018"
 updatedDate: "Dec 31 2019"
 badge: "Alta Scuola Politecnica"
 link: "https://joinvento.com/"
-tags: ["Entrepreneurship", "Product Development", "Innovation", "Startup"]
+tags: ["Product Development", "Product Strategy", "Innovation", "Cross-functional Collaboration"]
 ---
 
 ## Overview
 
-The SEI Pioneer project at Fondazione Agnelli was a comprehensive entrepreneurial initiative conducted through Alta Scuola Politecnica. The project was specifically structured to launch an innovative startup, combining technical development with business strategy and market analysis.
+The SEI Pioneer project at Fondazione Agnelli was a structured product-development program conducted through Alta Scuola Politecnica, combining technical development with business strategy and market analysis.
 
 ## Experience
 
@@ -18,7 +18,7 @@ Throughout this immersive experience, I worked under the guidance of industry pr
 
 ## Skills Developed
 
-- Startup development strategy
+- Product strategy and execution
 - Product management and roadmapping
 - Business model validation
 - Cross-functional team collaboration

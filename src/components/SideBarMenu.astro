@@ -5,7 +5,14 @@ const activeClass = "bg-base-300 text-primary"; // add subtle primary accent to 
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
     <li>
-        <a class="py-3 text-base pl-4 relative group" id="home" href="/">
+        <a
+            class="py-3 text-base pl-4 relative group"
+            id="home"
+            href="/"
+            data-ga-event="sidebar_nav_click"
+            data-ga-category="navigation"
+            data-ga-label="home"
+        >
             <span
                 class="pointer-events-none absolute left-0 top-2 bottom-2 w-[2px] bg-primary opacity-0 group-hover:opacity-80 transition-opacity rounded-sm"
             ></span>
@@ -17,6 +24,9 @@ const activeClass = "bg-base-300 text-primary"; // add subtle primary accent to 
             class="py-3 text-base pl-4 relative group"
             id="work-experience"
             href="/work-experience"
+            data-ga-event="sidebar_nav_click"
+            data-ga-category="navigation"
+            data-ga-label="work-experience"
         >
             <span
                 class="pointer-events-none absolute left-0 top-2 bottom-2 w-[2px] bg-primary opacity-0 group-hover:opacity-80 transition-opacity rounded-sm"
@@ -29,6 +39,9 @@ const activeClass = "bg-base-300 text-primary"; // add subtle primary accent to 
             class="py-3 text-base pl-4 relative group"
             id="research-papers"
             href="/research-papers"
+            data-ga-event="sidebar_nav_click"
+            data-ga-category="navigation"
+            data-ga-label="research-papers"
         >
             <span
                 class="pointer-events-none absolute left-0 top-2 bottom-2 w-[2px] bg-primary opacity-0 group-hover:opacity-80 transition-opacity rounded-sm"
@@ -41,6 +54,9 @@ const activeClass = "bg-base-300 text-primary"; // add subtle primary accent to 
             class="py-3 text-base pl-4 relative group"
             id="projects"
             href="/projects"
+            data-ga-event="sidebar_nav_click"
+            data-ga-category="navigation"
+            data-ga-label="projects"
         >
             <span
                 class="pointer-events-none absolute left-0 top-2 bottom-2 w-[2px] bg-primary opacity-0 group-hover:opacity-80 transition-opacity rounded-sm"
@@ -53,6 +69,9 @@ const activeClass = "bg-base-300 text-primary"; // add subtle primary accent to 
             class="py-3 text-base pl-4 relative group"
             id="education"
             href="/education"
+            data-ga-event="sidebar_nav_click"
+            data-ga-category="navigation"
+            data-ga-label="education"
         >
             <span
                 class="pointer-events-none absolute left-0 top-2 bottom-2 w-[2px] bg-primary opacity-0 group-hover:opacity-80 transition-opacity rounded-sm"
@@ -65,6 +84,9 @@ const activeClass = "bg-base-300 text-primary"; // add subtle primary accent to 
             class="py-3 text-base pl-4 relative group"
             id="contact"
             href="/contact"
+            data-ga-event="sidebar_nav_click"
+            data-ga-category="navigation"
+            data-ga-label="contact"
         >
             <span
                 class="pointer-events-none absolute left-0 top-2 bottom-2 w-[2px] bg-primary opacity-0 group-hover:opacity-80 transition-opacity rounded-sm"

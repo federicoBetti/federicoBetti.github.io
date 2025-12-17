@@ -1,10 +1,10 @@
 ---
 title: "AI Engineer"
 company: "Metaliquid"
-location: "Startup"
+location: "Italy"
 startDate: "Jan 2020"
 endDate: "Jan 2021"
-description: "At this research-focused startup, I specialized in developing and productizing Deep Learning technologies using Scala. My primary responsibility was transforming cutting-edge neural network architectures from academic research into practical applications for image, video, and audio analysis in the broadcasting industry. I worked closely with university research partners and contributed to several academic publications while bridging the gap between theoretical AI and commercial implementation."
+description: "At this research-focused AI company, I specialized in developing and productizing Deep Learning technologies using Scala. My primary responsibility was transforming cutting-edge neural network architectures from academic research into practical applications for image, video, and audio analysis in the broadcasting industry. I worked closely with university research partners and contributed to academic publications while bridging the gap between theoretical AI and commercial implementation."
 tags: ["Deep Learning", "Scala", "Image Analysis", "Video Analysis", "Audio Analysis", "Research Papers", "Broadcasting Industry"]
 ---
 

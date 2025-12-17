@@ -3,14 +3,14 @@ title: "PhD in Computer Science"
 institution: "University of Trento"
 location: "Trento, Italy"
 startDate: "Nov 2022"
-endDate: "Present"
-description: "Pursuing a PhD in Computer Science under the supervision of Professor Nicu Sebe, focusing on multimodal AI systems for enhanced image generation and evaluation. Research includes developing novel methodologies for diffusion models optimization and cognitive-inspired evaluation frameworks."
+endDate: "Jan 2026"
+description: "PhD in Computer Science under the supervision of Professor Nicu Sebe, focused on multimodal AI systems for image generation and evaluation. Research includes novel methodologies for diffusion model optimization and cognitive-inspired evaluation frameworks."
 degree: "Doctor of Philosophy in Computer Science"
 ---
 
 ## Research Focus
 
-My doctoral research at the University of Trento focuses on advancing multimodal AI systems, particularly in the areas of computer vision and natural language processing. Under the guidance of Professor Nicu Sebe, I am exploring innovative approaches to image generation, evaluation, and optimization.
+My doctoral research at the University of Trento focused on advancing multimodal AI systems, particularly in the areas of computer vision and natural language processing. Under the guidance of Professor Nicu Sebe, I explored approaches to image generation, evaluation, and optimization.
 
 ## Key Research Areas
 

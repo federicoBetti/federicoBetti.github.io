@@ -9,29 +9,48 @@ const papers = (await getCollection("research-papers")).sort(
 );
 const recent_papers = papers.slice(0, 2);
 
+// Get the most recent projects
+const projects = (await getCollection("projects")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const recent_projects = projects.slice(0, 2);
+
 // Get the latest job experience (Typewise)
 const experiences = await getCollection("work-experience");
 const latest_job = experiences.find(
   (exp) => exp.slug === "typewise-senior-ai-engineer",
 );
+
+const latest_job_desc_html = latest_job
+  ? `As a <strong>Senior AI Engineer</strong> at Typewise, I own the <strong>NLP/LLM roadmap</strong> and work at the intersection of industry and academia through our collaboration with Prof. Ryan Cotterell's NLP lab at ETH Zurich.<br/><br/>
+     <strong>AI agents</strong>: I design retrieval-augmented, hierarchical agent architectures for customer service automation (LangGraph), achieving <strong>90%+</strong> automated resolution rates in specific flows.<br/><br/>
+     In parallel, I ship real-time multilingual <strong>text prediction</strong> and <strong>grammar correction</strong> to <strong>4000+</strong> users, and maintain low-latency production services (<strong>&lt;250ms</strong>) on AWS. I also work closely with the founders on product strategy and organizational scaling.`
+  : "";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
     <div class="flex flex-col">
       <div class="flex-1">
-        <div class="text-xl py-1">Hey there 👋</div>
+        <div class="text-xl py-1">Hello 👋</div>
         <div class="text-5xl font-bold">I'm Federico Betti</div>
         <div class="text-3xl py-3 font-bold">
-          Researcher, AI Engineer and Startup Enthusiast
+          AI Researcher & Senior AI Engineer
         </div>
         <div class="py-2">
           <text class="text-lg">
-            I'm a Computer Engineer with a focus on AI research and development,
-            currently pursuing my PhD at the University of Trento while serving
-            as Senior AI Engineer at Typewise - ETH Zurich. My work spans
-            natural language processing, generative AI, and efficient ML
-            implementations.
+            I'm a Computer Engineer focused on applied AI research and
+            production-grade ML. I hold a PhD in Computer Science from the
+            University of Trento, where I worked on image generation and
+            evaluation. I work as a Senior AI Engineer at Typewise (Zurich). My
+            work spans NLP, generative AI, and efficient ML implementations.
+          </text>
+        </div>
+        <div class="py-2">
+          <text class="text-lg opacity-90">
+            I'm driven by continuous improvement, raising the bar in both my
+            personal and professional life. I stay curious, keep learning, and
+            turn that growth into better systems and outcomes.
           </text>
         </div>
         <div class="mt-8 flex gap-4 flex-wrap">
@@ -41,7 +60,7 @@ const latest_job = experiences.find(
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Connect with Federico on LinkedIn"
-            data-ga-event="linkedin_click"
+            data-ga-event="open_linkedin"
             data-ga-category="engagement"
             data-ga-label="hero_linkedin"
           >
@@ -65,11 +84,11 @@ const latest_job = experiences.find(
             rel="noopener noreferrer"
             aria-label="Download Federico's CV"
             download="Federico_Betti_CV.pdf"
-            data-ga-event="cv_download"
+            data-ga-event="download_cv"
             data-ga-category="engagement"
             data-ga-label="hero_cv"
           >
-            📄 Download CV
+            Download CV
           </a>
         </div>
       </div>
@@ -88,7 +107,8 @@ const latest_job = experiences.find(
       <>
         <HorizontalCard
           title={latest_job.data.title + " at " + latest_job.data.company}
-          desc={latest_job.data.description}
+          desc={latest_job_desc_html}
+          descHtml={true}
           url={`/work-experience/${latest_job.slug}`}
           target="_self"
           tags={latest_job.data.tags}
@@ -96,6 +116,28 @@ const latest_job = experiences.find(
         <div class="divider my-0" />
       </>
     )
+  }
+
+  <div class="flex items-center justify-between mt-10 mb-5">
+    <div class="text-3xl w-full font-bold">Recent Projects</div>
+    <a href="/projects" class="link text-sm ml-4 whitespace-nowrap">See all →</a
+    >
+  </div>
+
+  {
+    recent_projects.map((project) => (
+      <>
+        <HorizontalCard
+          title={project.data.title}
+          img={project.data.heroImage}
+          desc={project.data.description}
+          url={project.data.link || `/projects/${project.slug}`}
+          target={project.data.link ? "_blank" : "_self"}
+          tags={project.data.tags}
+        />
+        <div class="divider my-0" />
+      </>
+    ))
   }
 
   <div>
