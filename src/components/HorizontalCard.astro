@@ -10,6 +10,10 @@ const {
   target = "_blank",
   titleClass = "",
   contentClass = "",
+  gaEvent,
+  gaCategory,
+  gaLabel,
+  gaValue,
 } = Astro.props;
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
@@ -23,6 +27,10 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
     target={target}
     rel={target === "_blank" ? "noopener noreferrer" : undefined}
     class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-base-100"
+    data-ga-event={gaEvent}
+    data-ga-category={gaCategory}
+    data-ga-label={gaLabel}
+    data-ga-value={gaValue}
   >
     <div class={`hero-content flex-col md:flex-row ${contentClass}`}>
       {

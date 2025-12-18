@@ -8,9 +8,9 @@ const projects = (await getCollection("projects")).sort(
 );
 ---
 
-<BaseLayout title="Projects" sideBarActiveItemID="projects">
+<BaseLayout title="Personal Projects" sideBarActiveItemID="projects">
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Projects</div>
+    <div class="text-3xl w-full font-bold">Personal Projects</div>
   </div>
 
   <div class="relative pl-5 mb-10">
@@ -24,10 +24,13 @@ const projects = (await getCollection("projects")).sort(
             title={project.data.title}
             img={project.data.heroImage}
             desc={project.data.description}
-            url={project.data.link || `/projects/${project.slug}`}
-            target={project.data.link ? "_blank" : "_self"}
+            url={`/projects/${project.slug}`}
+            target="_self"
             tags={project.data.tags}
             contentClass="px-2 md:px-3"
+            gaEvent="open_project"
+            gaCategory="projects"
+            gaLabel={project.data.title}
           />
         ))
       }

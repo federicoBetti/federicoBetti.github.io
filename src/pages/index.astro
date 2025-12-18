@@ -50,7 +50,7 @@ const latest_job_desc_html = latest_job
           <text class="text-lg opacity-90">
             I'm driven by continuous improvement, raising the bar in both my
             personal and professional life. I stay curious, keep learning, and
-            turn that growth into better systems and outcomes.
+            turn that growth into better processes and outcomes.
           </text>
         </div>
         <div class="mt-8 flex gap-4 flex-wrap">
@@ -131,9 +131,12 @@ const latest_job_desc_html = latest_job
           title={project.data.title}
           img={project.data.heroImage}
           desc={project.data.description}
-          url={project.data.link || `/projects/${project.slug}`}
-          target={project.data.link ? "_blank" : "_self"}
+          url={`/projects/${project.slug}`}
+          target="_self"
           tags={project.data.tags}
+          gaEvent="open_project"
+          gaCategory="projects"
+          gaLabel={project.data.title}
         />
         <div class="divider my-0" />
       </>

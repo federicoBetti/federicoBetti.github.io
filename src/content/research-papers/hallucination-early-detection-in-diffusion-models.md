@@ -19,3 +19,4 @@ Text-to-Image generation has seen significant advancements in output realism wit
 3. Hallucination Prediction network combining PFI, cross-attention maps, and text embeddings via a Transformer Decoder, designed to be model-agnostic.
 4. Improved probability of complete generations for four-object prompts when used with existing diffusion models, with reduced generation time for achieving complete images.
 5. Creation of the InsideGen dataset (45,000 images) with hallucination annotations and saved intermediate signals (cross-attention maps and PFIs).
+
