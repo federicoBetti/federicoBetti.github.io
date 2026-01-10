@@ -2,9 +2,11 @@
 title: "Hallucination Early Detection in Diffusion Models"
 authors: "F Betti, L Baraldi, L Baraldi, N Sebe, R Cucchiara"
 conference: "International Journal of Computer Vision (IJCV)"
-pubDate: "Nov 12 2025"
+pubDate: "Jan 06 2026"
 description: "HEaD+ (Hallucination Early Detection+) identifies missing-object failures early in the diffusion process using cross-attention, textual information, and a Predicted Final Image signal, enabling early restarts with different seeds to improve completeness while reducing wasted compute."
-badge: "Accepted (in press)"
+badge: "Published"
+projectUrl: "https://aimagelab.github.io/HEaD/"
+publisherUrl: "https://link.springer.com/article/10.1007/s11263-025-02622-0"
 tags: ["Diffusion Models", "Text-to-Image", "Hallucination Detection", "Seed Selection", "Cross-Attention", "Efficiency", "Evaluation", "Generative AI"]
 ---
 

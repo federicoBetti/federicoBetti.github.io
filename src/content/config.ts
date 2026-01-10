@@ -18,6 +18,8 @@ const researchPaperSchema = z.object({
     conference: z.string(),
     pubDate: z.coerce.date(),
     description: z.string(),
+    publisherUrl: z.string().optional(),
+    projectUrl: z.string().optional(),
     link: z.string().optional(),
     pdfUrl: z.string().optional(),
     heroImage: z.string().optional(),

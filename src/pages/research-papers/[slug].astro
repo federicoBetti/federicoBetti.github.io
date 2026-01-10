@@ -49,10 +49,35 @@ const isInPress = (badge?: string) =>
 
     <div class="flex flex-wrap gap-2 mb-6">
         {
+            paper.data.publisherUrl && (
+                <a
+                    href={paper.data.publisherUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    View on Springer
+                </a>
+            )
+        }
+        {
+            paper.data.projectUrl && (
+                <a
+                    href={paper.data.projectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline btn-primary"
+                >
+                    Project page
+                </a>
+            )
+        }
+        {
             paper.data.link && (
                 <a
                     href={paper.data.link}
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-primary"
                 >
                     View Publication
@@ -64,6 +89,7 @@ const isInPress = (badge?: string) =>
                 <a
                     href={paper.data.pdfUrl}
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-outline btn-primary"
                 >
                     View PDF
