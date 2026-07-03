@@ -5,6 +5,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://federicobetti.github.io',
+  site: 'https://fbetti.com',
   integrations: [mdx(), sitemap(), tailwind()]
 });

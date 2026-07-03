@@ -3,7 +3,7 @@ title: "PhD in Computer Science"
 institution: "University of Trento"
 location: "Trento, Italy"
 startDate: "Nov 2022"
-endDate: "Jan 2026"
+endDate: "Mar 2026"
 description: "PhD in Computer Science under the supervision of Professor Nicu Sebe, focused on multimodal AI systems for image generation and evaluation. Research includes novel methodologies for diffusion model optimization and cognitive-inspired evaluation frameworks."
 degree: "Doctor of Philosophy in Computer Science"
 ---

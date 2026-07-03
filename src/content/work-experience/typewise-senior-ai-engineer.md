@@ -3,8 +3,8 @@ title: "Senior AI Engineer"
 company: "Typewise - ETH Zurich"
 location: "Zurich, Switzerland"
 startDate: "May 2022"
-endDate: "Present"
-description: "As a Senior AI Engineer at Typewise, I own the NLP/LLM roadmap and deliver production-grade language systems. My work spans retrieval-augmented AI agents for customer service automation (LangGraph), as well as real-time multilingual text prediction and grammar correction. I build and maintain low-latency Python services (<250ms) on AWS, drive engineering quality improvements (TDD and tooling), and collaborate closely with the founders and leadership on product strategy, organizational scaling, and hiring."
+endDate: "Jun 2026"
+description: "As a Senior AI Engineer at Typewise, I owned the NLP/LLM roadmap and delivered production-grade language systems. My work spanned retrieval-augmented AI agents for customer service automation (LangGraph), as well as real-time multilingual text prediction and grammar correction. I built and maintained low-latency Python services (<250ms) on AWS, drove engineering quality improvements (TDD and tooling), and collaborated closely with the founders and leadership on product strategy, organizational scaling, and hiring."
 tags: ["NLP", "Text Prediction", "Grammar Correction", "Large Language Models", "AWS", "Performance Optimization", "Product Development", "Production ML", "AI Agents", "Customer Care"]
 ---
 
