@@ -15,7 +15,6 @@ Gemfile.lock
 # Node.js and NPM
 node_modules
 npm-debug.log*
-package-lock.json
 codekit-config.json
 
 # macOS
@@ -64,8 +63,7 @@ pnpm-debug.log*
 # Cursor editor
 .cursor/
 
-# Lock files (unless you specifically want to commit these)
-# Comment these out if you want to commit lock files
+# Lock files: package-lock.json IS committed (deterministic CI builds);
+# other package managers' lock files stay ignored
 pnpm-lock.yaml
-# package-lock.json is already ignored above
-# yarn.lock
+yarn.lock
