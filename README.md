@@ -65,6 +65,7 @@ pnpm run dev
 │   │   │   ├── energyway-data-scientist.md
 │   │   │   ├── leonardo-ai-research-fellow.md
 │   │   │   ├── meta-liquid-ai-engineer.md
+│   │   │   ├── meta-research-scientist.md
 │   │   │   └── typewise-senior-ai-engineer.md
 │   │   └── config.ts
 │   ├── layouts/

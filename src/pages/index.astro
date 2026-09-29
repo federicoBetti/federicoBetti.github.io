@@ -15,17 +15,11 @@ const projects = (await getCollection("projects")).sort(
 );
 const recent_projects = projects.slice(0, 2);
 
-// Get the latest job experience (Typewise)
+// Get the current job experience (Meta)
 const experiences = await getCollection("work-experience");
-const latest_job = experiences.find(
-  (exp) => exp.slug === "typewise-senior-ai-engineer",
+const current_job = experiences.find(
+  (exp) => exp.slug === "meta-research-scientist",
 );
-
-const latest_job_desc_html = latest_job
-  ? `As a <strong>Senior AI Engineer</strong> at Typewise (2022–2026), I owned the <strong>NLP/LLM roadmap</strong> and worked at the intersection of industry and academia through our collaboration with Prof. Ryan Cotterell's NLP lab at ETH Zurich.<br/><br/>
-     <strong>AI agents</strong>: I designed retrieval-augmented, hierarchical agent architectures for customer service automation (LangGraph), achieving <strong>90%+</strong> automated resolution rates in specific flows.<br/><br/>
-     In parallel, I shipped real-time multilingual <strong>text prediction</strong> and <strong>grammar correction</strong> to <strong>4000+</strong> users, and maintained low-latency production services (<strong>&lt;250ms</strong>) on AWS. I also worked closely with the founders on product strategy and organizational scaling.`
-  : "";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -35,16 +29,17 @@ const latest_job_desc_html = latest_job
         <div class="text-xl py-1">Hello</div>
         <div class="text-5xl font-bold">I'm Federico Betti</div>
         <div class="text-3xl py-3 font-bold">
-          AI Researcher & Senior AI Engineer
+          Research Scientist at Meta
         </div>
         <div class="py-2">
           <text class="text-lg">
             I'm a Computer Engineer focused on applied AI research and
             production-grade ML. I hold a PhD in Computer Science from the
             University of Trento, where I worked on image generation and
-            evaluation. Most recently, I was a Senior AI Engineer at Typewise
-            (Zurich). My work spans NLP, generative AI, and efficient ML
-            implementations.
+            evaluation. I'm currently a Research Scientist at Meta in New York,
+            working on ads ranking. Before that, I was a Senior AI Engineer at
+            Typewise (Zurich). My work spans NLP, generative AI, and efficient
+            ML implementations.
           </text>
         </div>
         <div class="py-2">
@@ -84,22 +79,21 @@ const latest_job_desc_html = latest_job
   </div>
 
   <div class="flex items-center justify-between mt-10 mb-5">
-    <div class="text-3xl w-full font-bold">Latest Position</div>
+    <div class="text-3xl w-full font-bold">Current Position</div>
     <a href="/work-experience" class="link text-sm ml-4 whitespace-nowrap"
       >See others →</a
     >
   </div>
 
   {
-    latest_job && (
+    current_job && (
       <>
         <HorizontalCard
-          title={latest_job.data.title + " at " + latest_job.data.company}
-          desc={latest_job_desc_html}
-          descHtml={true}
-          url={`/work-experience/${latest_job.slug}`}
+          title={current_job.data.title + " at " + current_job.data.company}
+          desc={current_job.data.description}
+          url={`/work-experience/${current_job.slug}`}
           target="_self"
-          tags={latest_job.data.tags}
+          tags={current_job.data.tags}
         />
         <div class="divider my-0" />
       </>
